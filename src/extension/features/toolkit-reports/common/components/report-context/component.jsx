@@ -5,6 +5,8 @@ import { IncomeVsExpense } from 'toolkit-reports/pages/income-vs-expense';
 import { NetWorth } from 'toolkit-reports/pages/net-worth';
 import { SpendingByPayee } from 'toolkit-reports/pages/spending-by-payee';
 import { SpendingByCategory } from 'toolkit-reports/pages/spending-by-category';
+import { BudgetByCategory } from 'toolkit-reports/pages/budget-by-category';
+
 import { getToolkitStorageKey, setToolkitStorageKey } from 'toolkit/extension/utils/toolkit';
 import { getStoredFilters, storeAccountFilters, storeCategoryFilters, storeDateFilters } from 'toolkit-reports/utils/storage';
 
@@ -39,6 +41,13 @@ const REPORT_COMPONENTS = [{
 }, {
   component: SpendingByPayee,
   key: ReportKeys.SpendingByPayee,
+  filterSettings: {
+    disableTrackingAccounts: true,
+    includeTrackingAccounts: false
+  }
+}, {
+  component: BudgetByCategory,
+  key: ReportKeys.BudgetByCategory,
   filterSettings: {
     disableTrackingAccounts: true,
     includeTrackingAccounts: false
